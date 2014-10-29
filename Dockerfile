@@ -98,3 +98,4 @@ RUN groupadd -g 1100 theo
 RUN useradd -s /bin/false -u 1100 -g theo -G sudo -d /home/theo theo
 
 ADD base.sh /root/
+ADD screen.sh /root/
