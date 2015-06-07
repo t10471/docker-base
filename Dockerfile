@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage:0.9.15
+FROM phusion/baseimage:0.9.9
 
 MAINTAINER t10471 <t104711202@gmail.com>
 
