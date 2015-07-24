@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage:0.9.9
+FROM phusion/baseimage:0.9.17
 
 MAINTAINER t10471 <t104711202@gmail.com>
 
@@ -122,3 +122,10 @@ export HISTSIZE=9999\n" >> /root/.bashrc
 
 ADD base.sh /root/
 ADD screen.sh /root/
+
+RUN rm -f /etc/service/sshd/down
+
+# Regenerate SSH host keys. baseimage-docker does not contain any, so you
+# have to do that yourself. You may also comment out this instruction; the
+# init system will auto-generate one during boot.
+RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
